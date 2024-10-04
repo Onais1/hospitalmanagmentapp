@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edRegPass.getText().toString();
                 if(username.length() == 0 || password.length() == 0) {
-                    Toast.makeText(getApplicationContext(),"Details are incorrect, Please fill in again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Details are incorrect, Please fill in again!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(),"Welcome", Toast.LENGTH_SHORT).show();
                 }
