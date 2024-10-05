@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +44,11 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     if (db.login(username, password) == 1) {
                         Toast.makeText(getApplicationContext(), "Welcome", Toast.LENGTH_SHORT).show();
+                        SharedPreferences sharedpreferences =  getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putString("username", username);
+                        // allows saved data via key&value.
+                        editor.apply();
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     } else {
                         Toast.makeText(getApplicationContext(), "Incorrect username or password, try again", Toast.LENGTH_SHORT).show();
