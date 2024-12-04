@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonRegUser);
         tv = findViewById(R.id.textViewUser);
 
+        // register button will save user details in user table.
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +69,8 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Redirect to login page after successfully registering.
+
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +78,11 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    // Password string criteria:
+    // at least 1 special char
+    // at least 1 letter
+    // atl east 1 number
     public static boolean isValid(String passwordhere) {
         int f1=0, f2=0, f3=0;
         if (passwordhere.length() < 10) {
